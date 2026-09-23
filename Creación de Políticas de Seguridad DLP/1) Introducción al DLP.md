@@ -1,4 +1,4 @@
-Introducción al DLP
+#Introducción al DLP
 
 El DLP (Data Loss Prevention) es un conjunto de políticas, procesos y herramientas destinadas a evitar la pérdida, filtración o divulgación no autorizada de información.
 
