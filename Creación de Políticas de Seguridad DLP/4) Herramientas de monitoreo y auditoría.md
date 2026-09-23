@@ -1,126 +1,193 @@
 # Monitoreo y Auditoría
 
-La protección de datos sensibles no consiste únicamente en limitar quién puede acceder a ellos. También es necesario monitorizar cómo se utilizan y mantener un registro de las actividades realizadas sobre dicha información.
+Se implementará un sistema de **monitoreo y auditoría** sobre las actividades relacionadas con datos sensibles y críticos.
 
-El **monitoreo** permite detectar comportamientos que puedan representar un riesgo para los datos de la organización, mientras que la **auditoría** permite mantener un registro de las acciones realizadas para poder revisarlas posteriormente.
+El objetivo será detectar comportamientos de riesgo, registrar las acciones realizadas sobre la información y disponer de evidencias que permitan investigar incidentes o comprobar el cumplimiento de las políticas de seguridad.
+
+El monitoreo permitirá detectar actividades potencialmente peligrosas, mientras que la auditoría permitirá mantener un registro detallado de lo ocurrido para su posterior revisión.
 
 ## Monitoreo de datos sensibles
 
-Las políticas DLP deben establecer qué actividades relacionadas con datos sensibles serán monitorizadas.
+Se monitorizarán especialmente las acciones relacionadas con información clasificada como sensible o crítica.
 
-* Acceso a documentos o bases de datos sensibles.
-* Copia de información a dispositivos USB.
-* Envío de documentos sensibles mediante correo electrónico.
-* Subida de archivos a servicios de almacenamiento en la nube.
-* Copia y pegado de información sensible entre aplicaciones.
-* Descarga de grandes cantidades de información.
-* Intentos de acceso a información para la que el usuario no dispone de permisos.
-* Modificaciones en los permisos de acceso.
-* Transferencias de información fuera de la organización.
+Entre las actividades que serán supervisadas se incluyen:
 
-Dependiendo de la política definida, el sistema puede:
+- Acceso a documentos o bases de datos sensibles.
+- Copia de información a dispositivos USB.
+- Envío de documentos sensibles mediante correo electrónico.
+- Subida de archivos a servicios de almacenamiento en la nube.
+- Copia y pegado de información sensible entre aplicaciones.
+- Descarga de grandes cantidades de información.
+- Intentos de acceso a información sin permisos suficientes.
+- Modificaciones en permisos de acceso.
+- Transferencias de información fuera de la organización.
 
-* Permitir la acción.
-* Registrar la actividad.
-* Generar una alerta.
-* Solicitar una justificación al usuario.
-* Bloquear la operación.
+Dependiendo del tipo de información, del usuario y de la acción realizada, las políticas DLP podrán:
 
-Por ejemplo, un trabajador autorizado de Recursos Humanos necesita trasladar varios documentos de nóminas desde su ordenador corporativo a otro equipo de la empresa. Para realizar esta tarea utiliza un dispositivo USB corporativo autorizado y cifrado. Cuando intenta copiar los documentos, la solución DLP detecta que contienen información clasificada como sensible y comprueba que la operación cumple con la política establecida por la organización. Al tratarse de un usuario autorizado, trabajando desde un equipo corporativo y utilizando un dispositivo USB permitido, la transferencia se realiza correctamente y queda registrada para su posterior auditoría. Una vez finalizada la copia, el trabajador extrae el dispositivo USB y lo conecta en otro equipo corporativo autorizado. Como el dispositivo está cifrado, el contenido permanece protegido durante el traslado. En el segundo equipo se vuelve a comprobar que el usuario dispone de los permisos necesarios para acceder a la información. Si las condiciones de seguridad se cumplen, el usuario puede desbloquear el dispositivo y acceder a los documentos.
-De esta forma, la organización permite una transferencia legítima de información sensible sin perder el control sobre quién puede acceder a ella, qué dispositivos pueden utilizarse y qué acciones se realizan sobre los datos.
+- Permitir la acción.
+- Permitirla y registrarla.
+- Generar una alerta.
+- Solicitar una justificación.
+- Bloquear la operación.
 
-## Auditoría de actividades
+Por ejemplo, si un trabajador autorizado necesita trasladar documentos de nóminas entre dos equipos corporativos, deberá utilizar un dispositivo USB corporativo autorizado y cifrado.
 
-Las actividades relacionadas con datos sensibles deben quedar registradas para poder conocer posteriormente qué ha ocurrido.
+Cuando se realice la copia, la solución DLP comprobará que:
 
-Los registros de auditoría deberían incluir, cuando sea posible:
+- El usuario está autorizado.
+- El archivo está clasificado como información sensible.
+- El equipo de origen es corporativo.
+- El dispositivo USB está autorizado.
+- La transferencia cumple con la política establecida.
 
-* Usuario que realizó la acción.
-* Fecha y hora.
-* Recurso o documento al que se accedió.
-* Tipo de acción realizada.
-* Equipo o dispositivo desde el que se produjo.
-* Destino de la información.
-* Resultado de la acción.
-* Regla o política DLP que fue activada.
+Si todas las condiciones se cumplen, la copia será permitida y la actividad quedará registrada.
 
-Estos registros permiten investigar incidentes, detectar comportamientos anómalos y comprobar que las políticas de seguridad se están cumpliendo.
+Posteriormente, cuando el dispositivo USB se conecte a otro equipo corporativo, se volverán a aplicar los controles de acceso necesarios antes de permitir el uso de la información.
 
-Los registros se almacenan de forma protegida y conservarse durante el periodo establecido por la política de seguridad de la organización.
+De esta forma, se podrá realizar una transferencia legítima de información sensible manteniendo trazabilidad sobre el usuario, el dispositivo y las acciones realizadas.
 
-## Herramientas DLP
+# Auditoría de actividades
 
-Las soluciones DLP permiten identificar información sensible y controlar las acciones que los usuarios realizan sobre ella.
+Todas las actividades relevantes relacionadas con datos sensibles o críticos deberán quedar registradas.
 
-Algunos ejemplos son:
+Los registros de auditoría incluirán, cuando sea posible:
 
-### Symantec DLP
+- Usuario que realizó la acción.
+- Fecha y hora.
+- Documento o recurso afectado.
+- Clasificación de la información.
+- Tipo de acción realizada.
+- Equipo desde el que se realizó.
+- Dispositivo utilizado.
+- Destino de la información.
+- Resultado de la acción.
+- Política o regla DLP activada.
 
-Permite monitorizar el uso de información sensible y aplicar controles sobre diferentes acciones realizadas por los usuarios.
+Estos registros permitirán:
 
-Entre sus capacidades se encuentran el control de aplicaciones, copiar y pegar, capturas de pantalla y análisis del comportamiento relacionado con los datos.
+- Investigar incidentes.
+- Detectar comportamientos anómalos.
+- Identificar intentos de acceso no autorizado.
+- Revisar transferencias de información.
+- Verificar el cumplimiento de las políticas de seguridad.
 
-### Forcepoint DLP
+Los registros deberán almacenarse de forma protegida y conservarse durante el periodo definido por la política de seguridad de la organización.
 
-Permite supervisar el uso y movimiento de información sensible y establecer políticas para detectar o impedir determinadas acciones.
+El acceso a estos registros también estará restringido a los equipos responsables de seguridad, administración y auditoría.
 
-Puede utilizarse para controlar datos tanto en equipos de usuario como en otros entornos de la organización.
+# Herramientas DLP
 
-### Digital Guardian
+Se utilizarán soluciones DLP para identificar información sensible y controlar las acciones realizadas sobre ella.
 
-Permite monitorizar el uso de datos en diferentes sistemas y aplicar controles sobre las acciones realizadas con información protegida.
+Estas herramientas deberán permitir:
 
-También dispone de capacidades de análisis del comportamiento de los usuarios.
+- Detectar información clasificada como sensible.
+- Monitorizar el uso de archivos.
+- Controlar transferencias hacia dispositivos USB.
+- Supervisar envíos por correo electrónico.
+- Controlar subidas a servicios externos.
+- Registrar las acciones realizadas.
+- Generar alertas.
+- Bloquear transferencias no autorizadas.
 
-### McAfee DLP Endpoint
+Algunas soluciones que pueden utilizarse para estas funciones son:
 
-Permite aplicar políticas DLP directamente sobre los equipos de los usuarios y controlar acciones relacionadas con la utilización o transferencia de información sensible.
+- **Symantec DLP**
+- **Forcepoint DLP**
+- **Digital Guardian**
+- **McAfee DLP Endpoint**
 
-## Herramientas SIEM
+La herramienta seleccionada deberá integrarse con los sistemas de autenticación, control de acceso y monitorización utilizados por la organización.
 
-Además de las soluciones DLP, una organización puede utilizar un **SIEM (Security Information and Event Management)**.
+# Herramientas SIEM
 
-Un SIEM centraliza registros procedentes de diferentes sistemas de la organización y permite analizar y correlacionar los eventos de seguridad.
+Además de las herramientas DLP, se utilizará una solución **SIEM (Security Information and Event Management)** para centralizar y analizar los eventos de seguridad generados por los distintos sistemas.
 
-Algunos ejemplos de soluciones SIEM son:
+El SIEM recibirá registros procedentes de:
 
-* Wazuh.
-* Microsoft Sentinel.
-* Splunk Enterprise Security.
+- Soluciones DLP.
+- Servidores.
+- Firewalls.
+- Sistemas de autenticación.
+- Aplicaciones.
+- Equipos de usuario.
+- Sistemas de control de acceso.
 
-El SIEM puede recibir eventos procedentes de:
+Entre las soluciones que pueden utilizarse se encuentran:
 
-* Soluciones DLP.
-* Servidores.
-* Firewalls.
-* Sistemas de autenticación.
-* Aplicaciones.
-* Equipos de usuario.
+- **Wazuh**
+- **Microsoft Sentinel**
+- **Splunk Enterprise Security**
 
-De esta forma, un evento DLP puede analizarse junto con otra información de seguridad.
+El SIEM permitirá correlacionar diferentes eventos para detectar comportamientos que, de forma aislada, podrían no resultar sospechosos.
 
 Por ejemplo:
 
-1. Un usuario accede a una gran cantidad de documentos sensibles.
+1. Un usuario accede a una cantidad elevada de documentos sensibles.
 2. Poco después conecta un dispositivo USB.
-3. La herramienta DLP detecta un intento de copia de los documentos.
-4. Los diferentes eventos son enviados al SIEM.
-5. El SIEM correlaciona los eventos y genera una alerta para el equipo de Seguridad.
+3. La herramienta DLP detecta un intento de copia.
+4. Los eventos se envían al SIEM.
+5. El SIEM correlaciona la actividad.
+6. Se genera una alerta para el equipo de Seguridad.
 
-## Ejemplo de política de monitoreo
+# Reglas de monitoreo
 
-Siguiendo el ejemplo anterior de los documentos de nóminas:
+Se establecerán reglas específicas para controlar el uso de información sensible.
 
-Un trabajador autorizado de Recursos Humanos puede consultar y modificar las nóminas desde los sistemas de la empresa.
+Por ejemplo:
 
-Sin embargo, se establecerán controles adicionales cuando intente:
+## Acceso normal a información sensible
 
-* Copiar las nóminas a un dispositivo externo.
-* Enviarlas a una dirección de correo externa.
-* Subirlas a un servicio de almacenamiento no autorizado.
-* Descargar una cantidad anormalmente elevada de documentos.
+Un usuario autorizado podrá acceder a la información necesaria para realizar sus funciones.
 
-Estas acciones quedarán registradas y, dependiendo de su nivel de riesgo, podrán generar una alerta o ser bloqueadas.
+La acción será:
 
-De esta forma, la organización no solo controla **quién puede acceder a los datos**, sino también **qué hace el usuario con esos datos una vez que ha obtenido acceso**.
+- Permitida.
+- Registrada.
 
+## Copia a USB corporativo autorizado
+
+Si un usuario autorizado copia información sensible a un dispositivo USB corporativo y cifrado:
+
+- La transferencia será permitida.
+- La acción quedará registrada.
+- Se almacenará información sobre el usuario, archivo y dispositivo utilizado.
+
+## Copia a USB no autorizado
+
+Si un usuario intenta copiar información sensible a un dispositivo USB personal o no autorizado:
+
+- La transferencia será bloqueada.
+- Se generará una alerta.
+- El evento quedará registrado.
+
+## Envío de información a servicios externos
+
+Si un usuario intenta enviar información sensible a una cuenta de correo personal o subirla a un servicio externo no autorizado:
+
+- La acción será bloqueada.
+- Se generará una alerta.
+- El evento será enviado al sistema de monitorización.
+
+## Descarga anormal de información
+
+Si un usuario descarga una cantidad inusual de documentos sensibles en un periodo corto de tiempo:
+
+- La actividad será registrada.
+- Se generará una alerta.
+- El equipo de Seguridad revisará el comportamiento.
+
+# Revisión de eventos
+
+El equipo de Seguridad revisará periódicamente las alertas y eventos generados por las herramientas DLP y SIEM.
+
+Las actividades de mayor riesgo serán analizadas para determinar si corresponden a:
+
+- Una actividad legítima.
+- Un error del usuario.
+- Un incumplimiento de las políticas.
+- Un posible incidente de seguridad.
+
+Cuando se detecte una actividad no autorizada, se aplicarán los procedimientos de respuesta a incidentes establecidos.
+
+De esta forma, la organización no solo controlará quién puede acceder a la información, sino también qué acciones realiza sobre ella y si esas acciones cumplen con las políticas de seguridad definidas.
