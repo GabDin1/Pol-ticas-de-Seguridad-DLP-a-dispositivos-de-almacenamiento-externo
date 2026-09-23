@@ -1,4 +1,4 @@
-Clasificación de datos
+# Clasificación de datos
 
 Según la importancia y sensibilidad de la información, una organización debe aplicar medidas de seguridad más o menos restrictivas.
 
@@ -6,7 +6,7 @@ El nivel de protección dependerá de las consecuencias que podría tener una p�
 
 Normalmente, los datos pueden clasificarse en distintos niveles según su sensibilidad. Aquí muestro tres categorías principales que suelen usarse:
 
-Datos Internos
+**Datos Internos**
 
 Los datos internos son aquellos destinados al uso dentro de la organización y que no deberían compartirse públicamente.
 
@@ -24,7 +24,7 @@ Inventarios de equipos.
 
 El acceso a estos datos debería limitarse a empleados y colaboradores autorizados.
 
-Datos Sensibles
+**Datos Sensibles**
 
 Los datos sensibles son aquellos cuya divulgación no autorizada podría provocar daños importantes a la organización, a sus clientes o a sus trabajadores.
 
@@ -43,7 +43,7 @@ Documentación legal.
 
 La empresa debe controlar especialmente cómo se almacenan, transmiten y comparten estos datos.
 
-Datos Críticos
+**Datos Críticos**
 
 Los datos críticos representan el nivel más alto de sensibilidad dentro de la organización.
 
