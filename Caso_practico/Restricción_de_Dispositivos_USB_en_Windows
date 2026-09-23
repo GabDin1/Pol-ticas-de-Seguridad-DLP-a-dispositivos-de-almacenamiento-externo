@@ -1,0 +1,50 @@
+# Memoria de prueba de restricción de acceso a dispositivos USB
+
+## Objetivo
+
+El objetivo de esta prueba fue comprobar que las restricciones de acceso a dispositivos USB se aplican correctamente a usuarios estándar de Windows sin privilegios administrativos.
+
+Para realizar la validación se creó un usuario regular y se comprobó su comportamiento al intentar acceder a un dispositivo USB conectado a la máquina virtual.
+
+## Creación del usuario estándar
+
+Se creó un nuevo usuario local en Windows desde:
+
+**Configuración > Cuentas > Familia y otros usuarios**
+
+Durante el proceso se seleccionó la opción de crear un usuario sin cuenta de Microsoft.
+
+El usuario fue configurado como una cuenta estándar, sin privilegios administrativos.
+
+Para comprobar que la cuenta no pertenecía al grupo de administradores se revisaron los grupos y usuarios con privilegios del sistema.
+
+## Prueba de acceso al dispositivo USB
+
+Una vez creado el usuario estándar, se cerró la sesión del usuario anterior y se inició sesión con la nueva cuenta.
+
+Posteriormente, se conectó el dispositivo USB a la máquina virtual mediante VirtualBox.
+
+Con el dispositivo disponible en el sistema, se intentó acceder a su contenido utilizando la cuenta estándar.
+
+## Verificación de la restricción
+
+La prueba consistió en comprobar si el usuario estándar podía acceder al dispositivo USB.
+
+La política aplicada debía impedir el acceso al dispositivo para usuarios sin los permisos necesarios.
+
+Al intentar acceder al dispositivo, el sistema debía denegar la operación, mostrando un mensaje de acceso restringido o impidiendo el uso del dispositivo.
+
+De esta forma se comprobó que la restricción de acceso se aplicaba en función de los permisos del usuario.
+
+## Resultado
+
+La validación permite comprobar que un usuario estándar no puede utilizar libremente dispositivos USB cuando existen políticas de restricción correctamente configuradas.
+
+Este tipo de control permite reducir el riesgo de copia, extracción o introducción no autorizada de información mediante dispositivos de almacenamiento externo.
+
+La prueba también demuestra la importancia de combinar:
+
+- Control de usuarios y privilegios.
+- Restricciones sobre dispositivos USB.
+- Políticas DLP.
+- Registro y supervisión de los intentos de acceso.
