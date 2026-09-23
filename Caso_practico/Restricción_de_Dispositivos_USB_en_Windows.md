@@ -49,21 +49,3 @@ Al intentar acceder al dispositivo, el sistema debía:
 De esta forma, se comprobó que la restricción de acceso se aplicaba en función de los permisos del usuario.
 
 ---
-
-## Resultado
-
-La validación permite comprobar que un usuario estándar no puede utilizar libremente dispositivos USB cuando existen políticas de restricción correctamente configuradas.
-
-Este tipo de control permite reducir el riesgo de:
-
-- Copia no autorizada de información.
-- Extracción de datos sensibles.
-- Introducción de información no autorizada.
-- Uso indebido de dispositivos de almacenamiento externo.
-
-La prueba también demuestra la importancia de combinar diferentes medidas de seguridad:
-
-- **Control de usuarios y privilegios.**
-- **Restricciones sobre dispositivos USB.**
-- **Políticas DLP.**
-- **Registro y supervisión de los intentos de acceso.**
